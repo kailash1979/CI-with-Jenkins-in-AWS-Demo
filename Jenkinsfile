@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'devops-ashish'
+        PROJECT_ID = 'kailash-project'
         CLUSTER_NAME = 'kube-cluster-superleague'
-        LOCATION = 'europe-west1-b'
+        LOCATION = 'us-central1-c'
         CREDENTIALS_ID = 'kubernetes'
     }
     stages {
@@ -27,7 +27,7 @@ pipeline {
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("ashishgupta0711/kube8s:${env.BUILD_ID}")
+                    myapp = docker.build("kailashp/kube8s:${env.BUILD_ID}")
                 }
             }
         }
